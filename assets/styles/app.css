@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Rubik:wght@300;500;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+}
+
+#menu-mobile-button {
+  display: none;
+}
+
+header.navbar-container {
+  max-width: 1200px;
+  width: 100%;
+  margin-inline: auto;
+  padding: 0.5rem 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  top: 0;
+  position: sticky;
+  border-bottom: 1px solid black;
+}
+
+header.navbar-container .logo p {
+  font-size: 1.4rem;
+}
+
+header.navbar-container .logo p span {
+  font-family: "Noto Serif JP", serif;
+  font-weight: 700;
+  color: #c70039;
+}
+
+header.navbar-container .nav-list ul {
+  display: flex;
+  gap: 2rem;
+}
+
+header.navbar-container .nav-list li {
+  list-style-type: none;
+}
+
+header.navbar-container .nav-list li a {
+  text-decoration: none;
+  color: black;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+header.navbar-container .nav-list li a:hover {
+  text-decoration: underline;
+  color: white;
+  background-color: #c70039;
+}
+
+main {
+  max-width: 1200px;
+  width: 100%;
+  margin-inline: auto;
+  padding: 2rem 1rem;
+
+  display: flex;
+  gap: 2rem;
+}
+
+main .content {
+  flex: 5;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem 2rem;
+}
+
+main .content article {
+  padding: 0.5rem 1.2rem;
+}
+
+main .content article h1 {
+  font-size: 3.5rem;
+  font-family: "Noto Serif JP", serif;
+}
+
+main .content article p {
+  line-height: 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+main .content article img {
+  width: 100%;
+  border: 3px solid black;
+  box-shadow: 12px 12px 0 black;
+}
+
+main aside {
+  flex: 2;
+  border-left: 1px solid black;
+}
+
+main aside .card {
+  padding: 1.4rem;
+}
+
+main aside img {
+  width: 100%;
+  border: 2px solid #c70039;
+}
+
+footer {
+  max-width: 1200px;
+  width: 100%;
+  margin-inline: auto;
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid black;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    flex-flow: column nowrap;
+  }
+
+  main aside {
+    border: none;
+    border-top: 1px solid black;
+  }
+
+  #menu-mobile-button {
+    display: flex;
+    cursor: pointer;
+  }
+
+  header.navbar-container {
+    justify-content: space-between;
+  }
+
+  header.navbar-container .nav-list ul {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: white;
+    transition: all 0.2s ease-in-out;
+    z-index: -999;
+    opacity: 0;
+  }
+
+  header.navbar-container .nav-list ul.slide {
+    display: flex;
+    opacity: 1;
+  }
+}
